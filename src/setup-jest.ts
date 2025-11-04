@@ -1,14 +1,9 @@
-import { TestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting,
-} from '@angular/platform-browser-dynamic/testing';
+/* eslint-disable */
+import { getTestBed } from '@angular/core/testing';
+import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
 
 // Inicjalizacja TestBed dla środowiska testowego (bez zone.js)
-TestBed.initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(),
-);
+getTestBed().initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
 
 // Mock dla DOM
 Object.defineProperty(window, 'getComputedStyle', {
@@ -31,4 +26,3 @@ globalThis.IntersectionObserver = class IntersectionObserver {
   unobserve() {}
   disconnect() {}
 } as any;
-
